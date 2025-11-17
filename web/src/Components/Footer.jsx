@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import logoC from "../assets/logo-c.png";
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4">
         <div className="grid gap-8 text-center md:grid-cols-[1.5fr_repeat(2,1fr)] md:text-left">
           {/* Logo + Text */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -15,7 +15,7 @@ export default function Footer() {
             className="space-y-3"
           >
             <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
-              <motion.img
+              <img
                 src={logoC}
                 alt="Giovanni's Landscaping logo"
                 className="h-24 w-auto md:h-28"
@@ -28,10 +28,10 @@ export default function Footer() {
                 <p>Transforming Bay Area homes with care.</p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Quick Links */}
-          <motion.div
+          <div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -48,17 +48,17 @@ export default function Footer() {
                 { label: "Services", href: "#services" },
                 { label: "Contact", href: "#contact" },
               ].map((item, i) => (
-                <motion.li key={i} whileHover={{ x: 6 }}>
+                <li key={i} whileHover={{ x: 6 }}>
                   <a href={item.href} className="transition hover:text-white">
                     {item.label}
                   </a>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Contact */}
-          <motion.div
+          <div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -69,25 +69,25 @@ export default function Footer() {
               Contact
             </h3>
             <ul className="mt-4 space-y-2 text-base text-white md:text-lg">
-              <motion.li whileHover={{ x: 6 }}>
+              <li whileHover={{ x: 6 }}>
                 <a href="tel:+15105212171" className="transition hover:text-white">
                   Phone: (510) 521-2171
                 </a>
-              </motion.li>
-              <motion.li whileHover={{ x: 6 }}>
+              </li>
+              <li whileHover={{ x: 6 }}>
                 <a
                   href="mailto:giovannis@giovannislandscaping.net"
                   className="transition hover:text-white"
                 >
                   giovannis@giovannislandscaping.net
                 </a>
-              </motion.li>
+              </li>
             </ul>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <motion.div
+        <div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -97,17 +97,17 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Giovanni&apos;s Landscaping. All rights reserved.</p>
           <div className="flex gap-4">
             {[{ label: "Privacy" }, { label: "Terms" }, { label: "Contact" }].map((item, i) => (
-              <motion.a
+              <a
                 key={i}
                 href={`#${item.label.toLowerCase()}`}
                 whileHover={{ scale: 1.1 }}
                 className="hover:text-white"
               >
                 {item.label}
-              </motion.a>
+              </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
