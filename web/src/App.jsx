@@ -2,10 +2,11 @@ import './App.css'
 import Hero from './Components/Hero'
 import Navbar from './Components/Navbar'
 import About from './Components/About'
-import Services from './Components/Services'
+// import Services from './Components/Services'
 import Contact from "./Components/Contacts"
 import Footer from "./Components/Footer"
 import KeyServices from './Components/KeyServices'
+import WhyChooseUs from './Components/WhyChooseUs'
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
       <Hero/>
       <About/>
       <KeyServices/>
-      <Services/>
+      {/* <Services/> */}
+      <WhyChooseUs/>
       <Contact/>
       <Footer/>
     </>
