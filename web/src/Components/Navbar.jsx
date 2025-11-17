@@ -40,7 +40,7 @@ export default function Navbar() {
         bg-white/80 backdrop-blur-xl shadow-lg border-b border-red-100
       `}
     >
-      <nav className="max-w-8xl mx-auto px-8 py-4 flex justify-between items-center">
+      <nav className="max-w-8xl mx-auto px-8 py-2 flex justify-between items-center">
 
         {/* Logo + Text */}
         <div
@@ -53,9 +53,9 @@ export default function Navbar() {
             className="h-15 w-15 object-contain transition-transform duration-500 group-hover:scale-110"
           />
 
-          {/* <span className="text-2xl font-extrabold text-red-600 tracking-tight group-hover:text-red-700 transition-all">
+          <span className="text-2xl font-extrabold text-red-600 tracking-tight group-hover:text-red-700 transition-all">
             Giovanni’s Landscaping
-          </span> */}
+          </span>
         </div>
 
         {/* Desktop Menu */}

@@ -59,7 +59,7 @@ export default function KeyServices() {
           Our Key Services
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
