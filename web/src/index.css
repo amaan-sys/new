@@ -1,4 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+:root {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+body {
+  font-family: inherit;
+  background-color: #fff;
+  color: #111;
+}
 
 /* Custom animations */
 @keyframes fadeIn {
