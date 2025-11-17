@@ -44,7 +44,7 @@ export default function Navbar() {
 
         {/* Logo + Text */}
         <div
-          className="flex items-center gap-4 ml-6"
+          className="flex items-center gap-4 ml-2"
           onClick={() => scrollToSection("about")}
         >
           <img
@@ -53,9 +53,14 @@ export default function Navbar() {
             className="h-15 w-15 object-contain transition-transform duration-500 group-hover:scale-110"
           />
 
-          <span className="text-2xl font-extrabold text-red-600 tracking-tight group-hover:text-red-700 transition-all">
+          <span
+            className="text-xl font-bold tracking-tight group-hover:text-red-700 transition-all"
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
+          >
             Giovanni’s Landscaping
           </span>
+
+
         </div>
 
         {/* Desktop Menu */}

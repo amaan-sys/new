@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import whoWeAreImg from "../assets/whoweare.webp"
+import mission from "../assets/ourmission.png"
+import vision from "../assets/ourvision.avif"
 
 export default function AboutSection() {
   const [visible, setVisible] = useState(false);
@@ -11,69 +14,93 @@ export default function AboutSection() {
     return () => window.removeEventListener("scroll", reveal);
   }, []);
 
-  return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+  const fadeUp = visible
+    ? "opacity-100 translate-y-0"
+    : "opacity-0 translate-y-10";
 
-        {/* Section Header */}
-        <h2 className="text-4xl font-extrabold text-center text-red-600 mb-16 tracking-tight">
-          About Giovanni’s Landscaping
+  return (
+    <section className="w-full py-15 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-5xl font-black text-red-600 mb-14 text-center tracking-tight">
+          About Us
         </h2>
 
-        {/* Cards Grid */}
-        <div
-          className={`grid md:grid-cols-2 gap-10 transition-all duration-1000 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        {/* WHO WE ARE */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
-          {/* Who We Are Card */}
-          <div className="
-            bg-white rounded-2xl p-10 shadow-lg border border-red-200 
-            hover:border-red-400 hover:shadow-red-200 
-            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.00]
-            transition-all duration-500 md:col-span-2
-          ">
-            <h3 className="text-3xl font-bold text-red-600 mb-4 text-center">Who We Are</h3>
-            <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Founded in Alameda, California, Giovanni's Landscaping has proudly served the Bay Area for over
-              <span className="font-bold text-red-600"> 25 years</span>. We go beyond basic gardening to focus on
-              long-term plant health, soil care, design, and construction — creating landscapes that are both
-              healthy and beautiful.
-            </p>
+          {/* LEFT IMAGE CARD – ANGLED SHAPE */}
+          <div className="relative">
+            <div className="absolute -top-6 -left-6 w-40 h-40 bg-red-600 rounded-tr-[80px] rounded-bl-[80px] opacity-20"></div>
+            <img
+              src={whoWeAreImg}
+              className="w-full h-[380px] object-cover shadow-xl rounded-lg"
+            />
           </div>
 
-          {/* Vision Card */}
-          <div className="
-            bg-white rounded-2xl p-10 shadow-lg border border-red-200 
-            hover:border-red-400 hover:shadow-red-200 
-            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.00]
-            transition-all duration-500
-          ">
-            <h3 className="text-3xl font-bold text-red-600 mb-4">Our Vision</h3>
-            <p className="text-gray-700 leading-relaxed">
-              To create and maintain outdoor spaces that blend beauty, functionality, and sustainability —
-              where thoughtful design and expert care bring lasting enjoyment and value to every property.
+          {/* RIGHT TEXT BLOCK */}
+          <div className="space-y-5">
+            <h3 className="text-3xl font-bold text-red-600 leading-tight ">
+              Who We Are
+            </h3>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Giovanni’s Landscaping is a team of passionate professionals dedicated
+              to building beautiful outdoor environments. We specialize in complete
+              landscape care — from lawn maintenance and tree care to irrigation
+              systems and custom outdoor designs. Our work reflects decades of
+              craftsmanship, precision, and commitment to quality.
             </p>
           </div>
-
-          {/* Mission Card */}
-          <div className="
-            bg-white rounded-2xl p-10 shadow-lg border border-red-200 
-            hover:border-red-400 hover:shadow-red-200 
-            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.00]
-            transition-all duration-500
-          ">
-            <h3 className="text-3xl font-bold text-red-600 mb-4">Our Mission</h3>
-            <p className="text-gray-700 leading-relaxed">
-              At Giovanni's Landscaping, we're dedicated to delivering quality craftsmanship and personalized
-              service in every project we undertake. From detailed maintenance to landscape transformations,
-              our mission is to help clients enjoy landscapes that thrive year-round.
-            </p>
-          </div>
-
         </div>
+
+
+
+
+{/* VISION + LINE + MISSION SECTION */}
+<div className="mt-24 max-w-6xl mx-auto px-6">
+
+  <div className="grid md:grid-cols-3 gap-12 items-center text-center">
+
+    {/* LEFT — VISION */}
+    <div className="space-y-5">
+      <h3 className="text-3xl font-extrabold text-red-600 leading-tight">
+        Our Vision
+      </h3>
+      <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+        Our vision is to create outdoor spaces that inspire, enrich, and bring
+        lasting value to our clients. We aim to become a leading landscaping
+        company known for innovative designs, exceptional service quality, and
+        environmental responsibility.
+      </p>
+    </div>
+
+    {/* CENTER — RED DIVIDER LINE */}
+    <div className="flex justify-center">
+      <div className="w-1 h-60 bg-red-600 rounded-full"></div>
+    </div>
+
+    {/* RIGHT — MISSION */}
+    <div className="space-y-5">
+      <h3 className="text-3xl font-extrabold text-red-600 leading-tight">
+        Our Mission
+      </h3>
+      <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+        Our mission is to deliver dependable, high-quality landscaping
+        solutions that enhance the beauty, health, and functionality of your
+        outdoor space. We strive to exceed expectations through attention to
+        detail, professional expertise, and a strong focus on customer
+        satisfaction.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
       </div>
     </section>
+
+
   );
 }
