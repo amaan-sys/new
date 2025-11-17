@@ -31,7 +31,7 @@ export default function AboutSection() {
           <div className="
             bg-white rounded-2xl p-10 shadow-lg border border-red-200 
             hover:border-red-400 hover:shadow-red-200 
-            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]
+            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.00]
             transition-all duration-500 md:col-span-2
           ">
             <h3 className="text-3xl font-bold text-red-600 mb-4 text-center">Who We Are</h3>
@@ -47,7 +47,7 @@ export default function AboutSection() {
           <div className="
             bg-white rounded-2xl p-10 shadow-lg border border-red-200 
             hover:border-red-400 hover:shadow-red-200 
-            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]
+            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.00]
             transition-all duration-500
           ">
             <h3 className="text-3xl font-bold text-red-600 mb-4">Our Vision</h3>
@@ -61,7 +61,7 @@ export default function AboutSection() {
           <div className="
             bg-white rounded-2xl p-10 shadow-lg border border-red-200 
             hover:border-red-400 hover:shadow-red-200 
-            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]
+            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.00]
             transition-all duration-500
           ">
             <h3 className="text-3xl font-bold text-red-600 mb-4">Our Mission</h3>

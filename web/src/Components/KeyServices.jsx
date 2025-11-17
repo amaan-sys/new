@@ -1,49 +1,58 @@
+import creationImg from "../assets/services/card1.jpg";
+import maintenanceImg from "../assets/services/card2.jpg";
+import irrigationImg from "../assets/services/card3.jpg";
+import hardscapeImg from "../assets/services/card4.jpg";
+import deckImg from "../assets/services/card5.jpg";
+import sodImg from "../assets/services/card6.jpg";
+import lightingImg from "../assets/services/card7.jpg";
+import cleanupImg from "../assets/services/card8.jpg";
+
 export default function KeyServices() {
   const services = [
     {
       title: "Landscape Creation & Installation",
       text: "Complete builds — design, plants, pathways, structural features.",
-      img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
+      img: creationImg,
     },
     {
       title: "Landscape Maintenance",
       text: "Monthly care: pruning, feeding, pest control, irrigation checks.",
-      img: "https://images.unsplash.com/photo-1473445730015-841f29a9490b",
+      img: maintenanceImg,
     },
     {
       title: "Irrigation Systems",
       text: "Installations, repairs, upgrades, and optimization.",
-      img: "https://images.unsplash.com/photo-1602124582971-c7c29f0f1410",
+      img: irrigationImg,
     },
     {
       title: "Hardscaping & Stonework",
       text: "Patios, walkways, retaining walls, and stone features.",
-      img: "https://images.unsplash.com/photo-1607923432681-e6e3c3b022ad",
+      img: hardscapeImg,
     },
     {
       title: "Deck & Fence Services",
       text: "Construction, restoration, refinishing, and repairs.",
-      img: "https://images.unsplash.com/photo-1539035104074-dee66086a3f8",
+      img: deckImg,
     },
     {
       title: "Sod Installation & Restoration",
       text: "Leveling, soil prep, sod installation, turf rehab.",
-      img: "https://images.unsplash.com/photo-1586099840928-2d6a9c2f6e53",
+      img: sodImg,
     },
     {
       title: "Lighting & Drainage",
       text: "Low-voltage lighting + drainage for safety & beauty.",
-      img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
+      img: lightingImg,
     },
     {
       title: "Seasonal & Deep Cleanups",
       text: "Leaf removal, pruning, weed control & seasonal care.",
-      img: "https://images.unsplash.com/photo-1597701347891-dcead3c2b575",
+      img: cleanupImg,
     },
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-5 bg-white">
       <div className="max-w-6xl mx-auto px-6">
 
         <h2 className="text-4xl font-extrabold text-center text-red-600 mb-14 tracking-tight">
@@ -88,8 +97,9 @@ export default function KeyServices() {
                   {service.text}
                 </p>
 
-                {/* Accent Animated Bar */}
-                <div className="
+                {/* Animated Accent Bar */}
+                <div
+                  className="
                   mt-4 
                   h-1 
                   w-0 
@@ -98,7 +108,8 @@ export default function KeyServices() {
                   transition-all 
                   duration-700 
                   group-hover:w-full
-                "></div>
+                "
+                ></div>
               </div>
 
             </div>

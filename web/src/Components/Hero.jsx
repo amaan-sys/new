@@ -1,7 +1,10 @@
+import bg from "../assets/bghome.jpg";
+
 export default function Hero() {
   return (
     <section className="relative w-full h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e')` }}
+      style={{ backgroundImage: `url(${bg})` }}
+
     >
 
       {/* Red + dark overlay */}

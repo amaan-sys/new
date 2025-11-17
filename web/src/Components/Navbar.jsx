@@ -1,140 +1,128 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Logo from "../assets/logo-c.png";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [lastScroll, setLastScroll] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
-  const [shrink, setShrink] = useState(false);
+  const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
+    let lastScroll = window.scrollY;
+
     const handleScroll = () => {
       const current = window.scrollY;
-
-      // Hide navbar when scrolling down
-      if (current > lastScroll && current > 80) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
-
-      // Shrink navbar slightly when scrolled
-      if (current > 50) {
-        setShrink(true);
-      } else {
-        setShrink(false);
-      }
-
-      setLastScroll(current);
+      setShowNav(current < lastScroll);
+      lastScroll = current;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScroll]);
+  }, []);
+
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "services", label: "Services" },
+    { id: "contact", label: "Contact" },
+  ];
 
   const scrollToSection = (id) => {
     setActive(id);
-
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-    setOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
   };
 
   return (
-    <nav
-      className={`w-full fixed top-0 left-0 z-50 backdrop-blur-xl transition-all duration-500 ${
-        visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      } ${shrink ? "py-2 bg-white/20 shadow-lg" : "py-4 bg-white/40"}`}
+    <header
+      className={`
+        fixed top-0 left-0 w-full z-50 transition-all duration-500
+        ${showNav ? "translate-y-0" : "-translate-y-full"}
+        bg-white/80 backdrop-blur-xl shadow-lg border-b border-red-100
+      `}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4">
+      <nav className="max-w-8xl mx-auto px-8 py-4 flex justify-between items-center">
 
-        {/* Logo */}
-        <img
-          src="/logo.png"
-          alt="Giovanni's Landscaping"
-          className={`h-12 w-auto transition-all duration-500 cursor-pointer ${
-            shrink ? "scale-90 opacity-90" : "scale-100 opacity-100"
-          }`}
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            setActive("home");
-          }}
-        />
+        {/* Logo + Text */}
+        <div
+          className="flex items-center gap-4 ml-6"
+          onClick={() => scrollToSection("about")}
+        >
+          <img
+            src={Logo}
+            alt="Giovanni's Landscaping Logo"
+            className="h-15 w-15 object-contain transition-transform duration-500 group-hover:scale-110"
+          />
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex gap-8 text-red-600 font-semibold">
-          {["home", "services", "about", "contact"].map((item) => (
+          {/* <span className="text-2xl font-extrabold text-red-600 tracking-tight group-hover:text-red-700 transition-all">
+            Giovanni’s Landscaping
+          </span> */}
+        </div>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-10">
+          {navItems.map((item) => (
             <li
-              key={item}
-              onClick={() =>
-                item === "home"
-                  ? (window.scrollTo({ top: 0, behavior: "smooth" }), setActive("home"))
-                  : scrollToSection(item)
-              }
-              className={`cursor-pointer capitalize transition-all duration-300 relative group ${
-                active === item ? "text-black" : "text-red-600"
-              }`}
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="cursor-pointer font-medium text-lg relative transition duration-300 group"
             >
-              {item}
-              {/* underline hover effect */}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+              <span
+                className={`
+                  transition-all duration-300
+                  ${active === item.id ? "text-red-600" : "text-gray-800 group-hover:text-red-500"}
+                `}
+              >
+                {item.label}
+              </span>
+
+              {/* Animated Underline */}
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-[3px] rounded-full transition-all duration-300
+                  ${active === item.id ? "w-full bg-red-600" : "w-0 group-hover:w-full bg-red-300"}
+                `}
+              ></span>
+
+              {/* Glow hover effect */}
+              <span
+                className="
+                  absolute inset-0 opacity-0 group-hover:opacity-10
+                  bg-red-500 blur-xl rounded-full transition-all duration-300
+                "
+              ></span>
             </li>
           ))}
         </ul>
 
-        {/* Mobile Icon */}
-        <div className="md:hidden cursor-pointer" onClick={() => setOpen(!open)}>
-          <div
-            className={`h-1 w-7 bg-red-600 mb-1 transition-all duration-300 ${
-              open ? "rotate-45 translate-y-2" : ""
-            }`}
-          ></div>
-          <div
-            className={`h-1 w-7 bg-red-600 mb-1 transition-all duration-300 ${
-              open ? "opacity-0" : ""
-            }`}
-          ></div>
-          <div
-            className={`h-1 w-7 bg-red-600 transition-all duration-300 ${
-              open ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          ></div>
-        </div>
-      </div>
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-red-600 text-4xl"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          ☰
+        </button>
+      </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown */}
       <div
-        className={`md:hidden flex flex-col bg-white/80 backdrop-blur-lg text-red-700 font-medium text-lg absolute w-full left-0 shadow-xl transition-all duration-500 overflow-hidden ${
-          open ? "max-h-72" : "max-h-0"
-        }`}
+        className={`
+          md:hidden flex flex-col bg-white shadow-lg overflow-hidden transition-all duration-500
+          ${isOpen ? "max-h-64 p-4" : "max-h-0 p-0"}
+        `}
       >
-        {["home", "services", "about", "contact"].map((item) => (
-          <a
-            key={item}
-            onClick={() =>
-              item === "home"
-                ? (window.scrollTo({ top: 0, behavior: "smooth" }), setActive("home"), setOpen(false))
-                : scrollToSection(item)
-            }
-            className={`p-4 border-b cursor-pointer transition-all duration-300 ${
-              active === item
-                ? "bg-red-600 text-white"
-                : "hover:bg-red-600 hover:text-white"
-            }`}
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className={`
+              text-left py-3 text-lg font-medium border-b 
+              ${active === item.id ? "text-red-600" : "text-gray-800"}
+            `}
           >
-            {item.charAt(0).toUpperCase() + item.slice(1)}
-          </a>
+            {item.label}
+          </button>
         ))}
       </div>
-    </nav>
+    </header>
   );
 }
