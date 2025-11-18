@@ -139,7 +139,7 @@ export default function Contacts() {
           viewport={{ once: true }}
           className="flex h-full flex-col items-center justify-center gap-6 rounded-2xl bg-white p-8 text-center shadow-lg"
         >
-          <img src={logoC} alt="Giovanni's Landscaping logo" className="h-80 w-80 object-contain" />
+          <img src={logoC} alt="Giovanni's Landscaping logo" className="h-75 w-75 object-contain" />
           <h3 className="text-3xl font-bold text-gray-900">Connect With Us</h3>
 
           <motion.p
