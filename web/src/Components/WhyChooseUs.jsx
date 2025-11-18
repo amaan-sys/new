@@ -2,7 +2,7 @@ import { Leaf, Star, Recycle, CheckCircle } from "lucide-react";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-28 bg-white relative overflow-hidden">
+    <section className="py-20 px-12 bg-white relative overflow-hidden ">
       {/* Soft red background accents */}
       <div className="absolute top-0 -right-32 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-40"></div>
       <div className="absolute bottom-0 -left-32 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-40"></div>
@@ -54,10 +54,10 @@ export default function WhyChooseUs() {
             </div>
           </div>
         </div>
-        <div className="bg-red-50 p-12 rounded-[32px] shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-[#E8F5E8]">
+        <div className= "my-10   bg-red-50 p-12 rounded-[32px] shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-[#E8F5E8]">
           <h3 className="text-2xl font-bold text-red-600 mb-6">Our Approach</h3>
           <p className="text-gray-700 leading-relaxed mb-6 text-[17px]">
-            Our reputation is built on trust, quality, and meticulous attention to detail. We take pride in our work, use sustainable and organic methods whenever possible, and treat every project — big or small — with the same level of care and craftsmanship.
+            Our reputation is built on trust, exceptional quality, and meticulous attention to detail. We take pride in every project, using sustainable and organic methods whenever possible, and delivering the same level of craftsmanship whether the job is big or small.
           </p>
           <p className="text-gray-700 leading-relaxed text-[17px]">Your landscape is a long-term investment, and we’re here to help it thrive.</p>
         </div>
