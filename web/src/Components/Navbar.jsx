@@ -55,7 +55,7 @@ export default function Navbar() {
 
           <span
             className="text-xl font-bold tracking-tight group-hover:text-red-700 transition-all"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: "'Times New Roman', Georgia, 'Times New Roman', Times,  serif" }}
           >
             Giovanni’s Landscaping
           </span>
