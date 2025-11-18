@@ -10,23 +10,23 @@ import cleanupImg from "../assets/services/card8.jpg";
 export default function KeyServices() {
   const services = [
     {
-      title: "Landscape Creation & Installation",
-      text: "Complete builds — design, plants, pathways, structural features.",
+      title: "Landscape Build Installation",
+      text: "Complete landscape builds with expert design, plants, pathways, features, and detailed finishing.",
       img: creationImg,
     },
     {
       title: "Landscape Maintenance",
-      text: "Monthly care: pruning, feeding, pest control, irrigation checks.",
+      text: "Healthy landscapes through monthly care, ensuring vibrant growth, proper maintenance, and long-lasting beauty.",
       img: maintenanceImg,
     },
     {
-      title: "Irrigation Systems",
-      text: "Installations, repairs, upgrades, and optimization.",
+      title:" Irrigation Systems Services",
+      text: "We provide installations, repairs, upgrades, and optimization for reliable system performance.",
       img: irrigationImg,
     },
     {
-      title: "Hardscaping & Stonework",
-      text: "Patios, walkways, retaining walls, and stone features.",
+      title: "Hardscaping Stonework",
+      text: "Patios, walkways, retaining walls, and stone features crafted for durability, beauty, and function.",
       img: hardscapeImg,
     },
     {
@@ -89,18 +89,19 @@ export default function KeyServices() {
               </div>
 
               {/* Content */}
-              <div className="p-6 bg-white/90 backdrop-blur-md transition-colors duration-500 group-hover:bg-red-50">
+              <div className="p-6 bg-white/90 backdrop-blur-md transition-colors duration-500 group-hover:bg-red-50 ">
                 <h3 className="text-2xl font-bold text-red-600 mb-2 group-hover:text-red-700 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 group-hover:text-gray-800 transition-colors">
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors  ">
                   {service.text}
                 </p>
 
                 {/* Animated Accent Bar */}
                 <div
                   className="
-                  mt-4 
+                  mt-4
+                
                   h-1 
                   w-0 
                   bg-red-500 

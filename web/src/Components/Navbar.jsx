@@ -40,11 +40,11 @@ export default function Navbar() {
         bg-white/80 backdrop-blur-xl shadow-lg border-b border-red-100
       `}
     >
-      <nav className="max-w-8xl mx-auto px-8 py-2 flex justify-between items-center">
+      <nav className="max-w-8xl mx-auto w-full px-8 py-2 flex justify-between items-center">
 
         {/* Logo + Text */}
         <div
-          className="flex items-center gap-4 ml-2"
+          className="flex items-center gap-3 ml-0"
           onClick={() => scrollToSection("about")}
         >
           <img
@@ -100,8 +100,9 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Menu Button */}
+       
         <button
-          className="md:hidden text-red-600 text-4xl"
+          className="md:hidden text-red-600 "
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰

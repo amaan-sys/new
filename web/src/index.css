@@ -3,8 +3,8 @@
 @import "tailwindcss";
 
 * {
-      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
+      /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+font-family: 'DM Serif Display', serif;
 }
 
 body {
