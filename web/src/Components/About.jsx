@@ -39,12 +39,12 @@ const MissionIcon = () => (
     strokeLinejoin="round"
     className="text-red-600 mb-4 mx-auto"
   >
-    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84 1.25-2.19 1.45-3.56A3.89 3.89 0 0 0 12 12 3.89 3.89 0 0 0 16.06 8.04c1.37-.2 2.72-.74 3.56-1.45 1.26-1.5 5-2 5-2s-.74 3.74-2 5c-.84.71-2.19 1.25-3.56 1.45A3.89 3.89 0 0 0 12 16c-1.37 0-2.72-.54-3.56-1.45C7.75 13.52 7.21 12.17 6.5 12c-1.26-.5-5 0-5 0s.74 3.74 2 5z" />
-    <line x1="12" y1="2" x2="12" y2="12" />
-    <line x1="6" y1="18" x2="6" y2="22" />
-    <line x1="18" y1="18" x2="18" y2="22" />
+    <path d="M3 17l6-6 4 4 8-8" />
+    <path d="M14 7h7v7" />
   </svg>
 );
+
+
 
 
 export default function About() {
@@ -95,13 +95,13 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4"
+                className="text-3xl md:text-4xl font-extrabold text-red-600 mb-4"
               >
                 Who We Are
               </motion.h2>
 
               {/* Red vertical accent line + subtitle */}
-              <div className="flex items-start gap-4 mb-6">
+              <div className="flex items-start gap-4 mb-3">
                 <div className="w-1 bg-red-600 rounded-full h-10 shrink-0"></div>
                 <p className="text-gray-700 text-lg leading-relaxed pt-1.5">
                   Creating natural, welcoming, timeless environments.
