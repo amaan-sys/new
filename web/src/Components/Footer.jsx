@@ -64,12 +64,12 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:giovannis@giovannislandscaping.net"
-                  className="transition hover:text-white flex items-center gap-2"
+                  className="transition hover:text-white md:text-lg  items-center gap-2"
                 >
                   <img
                     src={emailIcon}
                     alt="Email Icon"
-                    className="inline h-5 w-5 object-contain"
+                    className="inline h-5 w-5 object-contain justify-center"
                   />
                   giovannis@giovannislandscaping.net
                 </a>
