@@ -2,19 +2,10 @@
 
 @import "tailwindcss";
 
-* {
-<<<<<<< HEAD
-      /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-font-family: 'DM Serif Display', serif;
-=======
-      font-family: 'Times New Roman', Georgia, 'Times New Roman', Times, serif, serif;
 
->>>>>>> e6ce2e2118a70c88a0d3b9215ad2cfa99b6d6232
-}
 
 body {
-  font-family: inherit;
-  background-color: #fff;
+font-family: 'DM Serif Display', serif;  background-color: #fff;
   color: #111;
 }
 
