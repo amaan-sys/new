@@ -6,7 +6,7 @@ export default function Services() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
         {/* Lawn Care Card */}
         <div className="relative group transition-all transform hover:scale-105 hover:shadow-lg overflow-hidden rounded-xl">
-          <div className="absolute inset-0 bg-gradient-to-tr from-red-500 to-red-700 opacity-40 group-hover:opacity-50 transition-all"></div>
+          <div className="absolute inset-0  from-red-500 to-red-700 opacity-40 group-hover:opacity-50 transition-all"></div>
           <div className="relative z-10 p-6 bg-white rounded-xl shadow-md group-hover:scale-105 transition-all">
             <div className="flex justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-red-600 group-hover:animate-bounce transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,7 +20,7 @@ export default function Services() {
 
         {/* Hardscaping Card */}
         <div className="relative group transition-all transform hover:scale-105 hover:shadow-lg overflow-hidden rounded-xl">
-          <div className="absolute inset-0 bg-gradient-to-tr from-red-500 to-red-700 opacity-40 group-hover:opacity-50 transition-all"></div>
+          <div className="absolute inset-0  from-red-500 to-red-700 opacity-40 group-hover:opacity-50 transition-all"></div>
           <div className="relative z-10 p-6 bg-white rounded-xl shadow-md group-hover:scale-105 transition-all">
             <div className="flex justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-red-600 group-hover:animate-bounce transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -34,7 +34,7 @@ export default function Services() {
 
         {/* Irrigation Card */}
         <div className="relative group transition-all transform hover:scale-105 hover:shadow-lg overflow-hidden rounded-xl">
-          <div className="absolute inset-0 bg-gradient-to-tr from-red-500 to-red-700 opacity-40 group-hover:opacity-50 transition-all"></div>
+          <div className="absolute inset-0  from-red-500 to-red-700 opacity-40 group-hover:opacity-50 transition-all"></div>
           <div className="relative z-10 p-6 bg-white rounded-xl shadow-md group-hover:scale-105 transition-all">
             <div className="flex justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-red-600 group-hover:animate-bounce transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">

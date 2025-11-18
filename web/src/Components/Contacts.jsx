@@ -164,10 +164,10 @@ export default function Contacts() {
             </motion.p>
 
             <motion.p whileHover={{ x: 6 }}>
-              <span className="font-semibold text-gray-900">Phone:</span> (xxx) xxx-xxxx
+              <span className="font-semibold text-gray-900">Phone:</span> 510.521.2171
             </motion.p>
             <motion.p whileHover={{ x: 6 }}>
-              <span className="font-semibold text-gray-900">Email:</span> info@giovannislandscaping.com
+              <span className="font-semibold text-gray-900">Email:</span> giovannis@giovannislandscaping.net
             </motion.p>
           </div>
         </motion.div>

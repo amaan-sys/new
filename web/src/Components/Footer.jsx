@@ -35,7 +35,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-base text-white md:text-lg">
               {[
                 { label: "Home", href: "./Hero.jsx" },
-                { label: "About", href: "./About.jsx" },
+                { label: "About", href: "#about" },
                 { label: "Services", href: "#services" },
                 { label: "Contact", href: "#contact" },
               ].map((item, i) => (
