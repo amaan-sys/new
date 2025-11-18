@@ -2,14 +2,10 @@
 
 @import "tailwindcss";
 
-* {
-      font-family: 'Times New Roman', Georgia, 'Times New Roman', Times, serif, serif;
 
-}
 
 body {
-  font-family: inherit;
-  background-color: #fff;
+font-family: 'DM Serif Display', serif;  background-color: #fff;
   color: #111;
 }
 

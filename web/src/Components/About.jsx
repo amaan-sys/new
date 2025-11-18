@@ -1,106 +1,219 @@
-import { useEffect, useState } from "react";
-import whoWeAreImg from "../assets/whoweare.webp"
-import mission from "../assets/ourmission.png"
-import vision from "../assets/ourvision.avif"
+import React from 'react';
+import { motion } from "framer-motion";
+import whoweare from "../assets/whoweare.webp";
 
-export default function AboutSection() {
-  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const reveal = () => {
-      if (window.scrollY > 200) setVisible(true);
-    };
-    window.addEventListener("scroll", reveal);
-    return () => window.removeEventListener("scroll", reveal);
-  }, []);
 
-  const fadeUp = visible
-    ? "opacity-100 translate-y-0"
-    : "opacity-0 translate-y-10";
+// Target Icon for Vision
 
+const VisionIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-red-600 mb-4 mx-auto"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>
+);
+
+// Rocket Icon for Mission
+const MissionIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-red-600 mb-4 mx-auto"
+  >
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84 1.25-2.19 1.45-3.56A3.89 3.89 0 0 0 12 12 3.89 3.89 0 0 0 16.06 8.04c1.37-.2 2.72-.74 3.56-1.45 1.26-1.5 5-2 5-2s-.74 3.74-2 5c-.84.71-2.19 1.25-3.56 1.45A3.89 3.89 0 0 0 12 16c-1.37 0-2.72-.54-3.56-1.45C7.75 13.52 7.21 12.17 6.5 12c-1.26-.5-5 0-5 0s.74 3.74 2 5z" />
+    <line x1="12" y1="2" x2="12" y2="12" />
+    <line x1="6" y1="18" x2="6" y2="22" />
+    <line x1="18" y1="18" x2="18" y2="22" />
+  </svg>
+);
+
+
+export default function About() {
   return (
-    <section className="w-full py-15 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-5xl font-black text-red-600 mb-14 text-center tracking-tight">
+    <section id='about' className="py-16 md:py-10 bg-[#f9f7f4] font-[Inter]">
+
+      {/* ABOUT US HEADING */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl md:text-4xl font-extrabold text-red-600 tracking-tight">
           About Us
         </h2>
+      </div>
 
-        {/* WHO WE ARE */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="max-w-6xl mx-auto px-6"
+      >
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
 
-          {/* LEFT IMAGE CARD – ANGLED SHAPE */}
-          <div className="relative">
-            <div className="absolute -top-6 -left-6 w-40 h-40 bg-red-600 rounded-tr-[80px] rounded-bl-[80px] opacity-20"></div>
-            <img
-              src={whoWeAreImg}
-              className="w-full h-[380px] object-cover shadow-xl rounded-lg"
-            />
-          </div>
+          {/* Soft background card effect */}
+          <div className="absolute inset-0 bg-white rounded-3xl shadow-2xl blur-[2px] -z-10 opacity-70"></div>
 
-          {/* RIGHT TEXT BLOCK */}
-          <div className="space-y-5">
-            <h3 className="text-3xl font-bold text-red-600 leading-tight ">
-              Who We Are
-            </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Giovanni’s Landscaping is a team of passionate professionals dedicated
-              to building beautiful outdoor environments. We specialize in complete
-              landscape care — from lawn maintenance and tree care to irrigation
-              systems and custom outdoor designs. Our work reflects decades of
-              craftsmanship, precision, and commitment to quality.
-            </p>
+          {/* Layout Grid */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* LEFT IMAGE BLOCK */}
+            <div className="relative">
+              {/* Pink soft blob */}
+              <div className="absolute -top-10 -left-10 w-48 h-48 bg-red-200/50 rounded-3xl blur-2xl -z-10 hidden sm:block"></div>
+
+              <motion.img
+                src={whoweare}
+                alt="Who We Are - Landscaping Team"
+                className="rounded-xl shadow-2xl object-cover w-full h-[300px] md:h-[420px]"
+              />
+              {/* <span className="absolute bottom-4 right-4 text-xs bg-red-600 text-white px-3 py-1 rounded-lg opacity-80">
+                Crafting Quality Outdoors
+              </span> */}
+            </div>
+
+            {/* RIGHT TEXT BLOCK */}
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4"
+              >
+                Who We Are
+              </motion.h2>
+
+              {/* Red vertical accent line + subtitle */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-1 bg-red-600 rounded-full h-10 shrink-0"></div>
+                <p className="text-gray-700 text-lg leading-relaxed pt-1.5">
+                  Creating natural, welcoming, timeless environments.
+                </p>
+              </div>
+
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                Giovanni’s Landscaping is a team of passionate professionals
+                dedicated to building beautiful outdoor environments. From lawn
+                maintenance and tree care to irrigation systems and custom outdoor
+                designs. Our work reflects decades of craftsmanship and a
+                commitment to long-lasting quality, ensuring every client's vision
+                is brought to life with precision and care.
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                {/* Card 1 */}
+                <motion.div
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 15px rgba(220, 38, 38, 0.1)" }}
+                  className="bg-red-50/50 shadow-lg rounded-xl p-4 text-center border border-red-200 transition duration-300 cursor-default"
+                >
+                  <p className="text-2xl font-bold text-red-600">20 +</p>
+                  <p className="text-gray-600 text-sm mt-1 font-medium">Years Experience</p>
+                </motion.div>
+
+                {/* Card 2 */}
+                <motion.div
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 15px rgba(220, 38, 38, 0.1)" }}
+                  className="bg-red-50/50 shadow-lg rounded-xl p-4 text-center border border-red-200 transition duration-300 cursor-default"
+                >
+                  <p className="text-2xl font-bold text-red-600">500 +</p>
+                  <p className="text-gray-600 text-sm mt-1 font-medium">Projects Completed</p>
+                </motion.div>
+
+                {/* Card 3 */}
+                <motion.div
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 15px rgba(220, 38, 38, 0.1)" }}
+                  className="bg-red-50/50 shadow-lg rounded-xl p-4 text-center border border-red-200 transition duration-300 cursor-default"
+                >
+                  <p className="text-2xl font-bold text-red-600">4.9 ★</p>
+                  <p className="text-gray-600 text-sm mt-1 font-medium">Client Rating</p>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
 
 
+        {/* Vission & Mission*/}
 
+        <div className="mt-20 md:mt-15 px-4">
+          <div className="text-center mb-12">
+            <p className="text-xl font-semibold text-red-500 uppercase tracking-widest">Our Guiding Principles</p>
+          </div>
 
-{/* VISION + LINE + MISSION SECTION */}
-<div className="mt-24 max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8">
 
-  <div className="grid md:grid-cols-3 gap-12 items-center text-center">
+            {/* VISION CARD */}
+            <div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{
+                translateY: -5,
+                boxShadow: "0 15px 30px rgba(220, 38, 38, 0.15)"
+              }}
+              className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-red-100/50 transition duration-300"
+            >
+              <div className="text-center">
+                <VisionIcon />
+                <h3 className="text-3xl font-extrabold text-red-600 mb-3">
+                  Our Vision
+                </h3>
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                  To be the recognized leader in sustainable, high-end landscaping,
+                  creating unique and regenerative outdoor sanctuaries that blend
+                  flawlessly with their natural surroundings and enhance the well-being of our clients.
+                </p>
+              </div>
+            </div>
 
-    {/* LEFT — VISION */}
-    <div className="space-y-5">
-      <h3 className="text-3xl font-extrabold text-red-600 leading-tight">
-        Our Vision
-      </h3>
-      <p className="text-gray-700 text-lg leading-relaxed font-semibold">
-        Our vision is to create outdoor spaces that inspire, enrich, and bring
-        lasting value to our clients. We aim to become a leading landscaping
-        company known for innovative designs, exceptional service quality, and
-        environmental responsibility.
-      </p>
-    </div>
+            {/* MISSION CARD */}
+            <div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{
+                translateY: -5,
+                boxShadow: "0 15px 30px rgba(220, 38, 38, 0.15)"
+              }}
+              className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-red-100/50 transition duration-300"
+            >
+              <div className="text-center">
+                <MissionIcon />
+                <h3 className="text-3xl font-extrabold text-red-600 mb-3">
+                  Our Mission
+                </h3>
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                  To deliver dependable, expert landscaping services through meticulous
+                  planning, innovative techniques, and unwavering attention to detail,
+                  always prioritizing client satisfaction and responsible environmental stewardship.
+                </p>
+              </div>
+            </div>
 
-    {/* CENTER — RED DIVIDER LINE */}
-    <div className="flex justify-center">
-      <div className="w-1 h-60 bg-red-600 rounded-full"></div>
-    </div>
+          </div>
+        </div>
 
-    {/* RIGHT — MISSION */}
-    <div className="space-y-5">
-      <h3 className="text-3xl font-extrabold text-red-600 leading-tight">
-        Our Mission
-      </h3>
-      <p className="text-gray-700 text-lg leading-relaxed font-semibold">
-        Our mission is to deliver dependable, high-quality landscaping
-        solutions that enhance the beauty, health, and functionality of your
-        outdoor space. We strive to exceed expectations through attention to
-        detail, professional expertise, and a strong focus on customer
-        satisfaction.
-      </p>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-      </div>
+      </motion.div>
     </section>
-
-
   );
 }
