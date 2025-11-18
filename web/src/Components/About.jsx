@@ -95,7 +95,7 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4"
+                className="text-3xl md:text-4xl font-extrabold text-red-600 mb-2"
               >
                 Who We Are
               </motion.h2>
