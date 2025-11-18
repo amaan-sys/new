@@ -4,11 +4,11 @@ import yourImage from "../assets/whoweare.webp"; // change to your image
 export default function about() {
   return (
 
-    <section id='about' className="py-10  bg-[#f9f7f4]">
+    <section id='about' className="py-8  bg-[#f9f7f4]">
 
       {/* ABOUT US HEADING */}
-      <div className="text-center mb-16 ">
-        <h2 className="text-3md md:text-4xl font-extrabold text-red-600 tracking-tight">
+      <div className="text-center mb-8 ">
+        <h2 className="text-4md md:text-4xl font-extrabold text-red-600 tracking-tight">
           About Us
         </h2>
       </div>

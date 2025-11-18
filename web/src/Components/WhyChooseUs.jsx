@@ -12,7 +12,7 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-15 bg-white relative overflow-hidden">
       
       {/* Soft red background accent */}
       <div className="absolute top-0 -right-20 w-80 h-80 bg-red-100 rounded-full blur-3xl opacity-30"></div>
