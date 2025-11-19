@@ -4,13 +4,13 @@ import missionImg from "../assets/ourmission.png";
 
 export default function VisionMission() {
   return (
-    <section className="relative overflow-hidden py-18 bg-red-600 font-serif">
+    <section className="relative overflow-hidden py-18 bg-red-50 font-serif">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center text-4xl md:text-5xl font-bold text-white mb-6 tracking-wide"
+        className="text-center text-4xl md:text-5xl font-bold text-red-600 mb-6 tracking-wide"
       >
         Mission & Vision
       </motion.h2>
@@ -20,7 +20,7 @@ export default function VisionMission() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-center max-w-3xl mx-auto text-white text-lg leading-relaxed mb-16"
+        className="text-center max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed mb-16"
       >
         Guided by a clear vision and mission, we strive to transform outdoor spaces through sustainable design,
         expert craftsmanship, and long‑term landscape care.
