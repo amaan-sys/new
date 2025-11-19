@@ -37,3 +37,41 @@ font-family: 'DM Serif Display', serif;  background-color: #fff;
   animation: slideDown 1.3s ease-out forwards;
 }
 
+/* Ultra-small screen fix */
+@media (max-width: 300px) {
+  html {
+    font-size: 50%; /* slightly shrink all text */
+  }
+
+  img, video {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .force-wrap {
+    word-break: break-word;
+    white-space: normal;
+  }
+
+body {
+    overflow-x: hidden !important; 
+  }
+
+    .mini-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+   button, a {
+    font-size: 0.6rem !important;
+    padding: 2px 6px !important;
+  }
+  
+
+}
+
+ 
+

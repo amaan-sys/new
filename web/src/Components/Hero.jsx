@@ -1,36 +1,86 @@
 import bg from "../assets/bghome.jpg";
 
-
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${bg})`  }}
-    >
+    <section
+      id="home"
+      className="
+        relative w-full h-[90vh] sm:h-screen 
+        flex items-center justify-center 
+        bg-cover bg-center bg-no-repeat 
+      
 
-      {/* Red + dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-600/40 to-black/70"></div>
+      "
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      {/* Red + Black gradient overlay */}
+      <div
+        className="
+          absolute inset-0 
+          bg-gradient-to-br 
+          from-red-700/60 via-red-800/40 to-black/80
+        "
+      ></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-3xl px-6 animate-fadeIn pt-15">
+      <div className="relative z-10 text-center text-white max-w-3xl px-4 sm:px-6 pt-20 sm:pt-10">
         
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 animate-slideDown ">
-          Transforming <span className="text-red-300 drop-shadow-lg">Landscapes</span> with Excellence, Organic Methods and Craftsmanship
+        {/* Title */}
+        <h1
+          className="
+            text-3xl sm:text-4xl md:text-5xl 
+            font-extrabold leading-tight md:leading-snug 
+            mb-6 animate-slideDown drop-shadow-xl
+          "
+        >
+          Transforming <span className="text-red-300">Landscapes</span> with Excellence,
+          Organic Methods & Craftsmanship
         </h1>
 
-        <p className="text-lg md:text-xl mb-8 opacity-90 animate-fadeInSlow">
+        {/* Subtitle */}
+        <p
+          className="
+            text-sm sm:text-lg md:text-xl 
+            mb-8 sm:mb-10 opacity-90 
+            animate-fadeInSlow leading-relaxed
+          "
+        >
           Premium landscaping crafted with precision, passion, and quality service.
         </p>
 
-        <div className="flex gap-5 justify-center">
-          <button onClick={() =>
-              document.getElementById("about").scrollIntoView({ behavior: "smooth" })
-            } className="px-8 py-3 rounded-full text-lg font-semibold bg-red-500 hover:bg-red-600 shadow-[0_0_20px_rgba(255,0,0,0.6)] hover:scale-110 transition-all">
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          
+          {/* Button 1 */}
+          <button
+            onClick={() =>
+              document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="
+              px-7 py-3 sm:px-8 rounded-full
+              text-base sm:text-lg font-semibold
+              bg-red-500 hover:bg-red-600
+              shadow-[0_0_18px_rgba(255,0,0,0.55)]
+              hover:scale-110 active:scale-95 
+              transition-all
+            "
+          >
             Get a Free Quote
           </button>
 
-          <button onClick={() =>
-              document.getElementById("services").scrollIntoView({ behavior: "smooth" })
-            } className="px-8 py-3 rounded-full text-lg font-semibold border border-white hover:bg-white/20 hover:scale-105 transition-all">
+          {/* Button 2 */}
+          <button
+            onClick={() =>
+              document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="
+              px-7 py-3 sm:px-8 rounded-full
+              text-base sm:text-lg font-semibold 
+              border border-white 
+              hover:bg-white/20 hover:scale-105 active:scale-95 
+              transition-all
+            "
+          >
             View Services
           </button>
         </div>

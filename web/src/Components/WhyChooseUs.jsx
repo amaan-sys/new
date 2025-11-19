@@ -34,52 +34,61 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 px-12 bg-white relative overflow-hidden">
-      
-      {/* Floating gradient blobs */}
+    <section className="mx-auto py-20 px-5 sm:px-8 lg:px-12 bg-white relative overflow-hidden">
+
+      {/* Floating gradients */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.4, scale: 1 }}
+        animate={{ opacity: 0.35, scale: 1 }}
         transition={{ duration: 1 }}
-        className="absolute top-0 -right-32 w-96 h-96 bg-red-200 rounded-full blur-3xl"
-      ></motion.div>
+        className="absolute top-10 right-[-120px] w-80 h-80 bg-red-200 rounded-full blur-[110px]"
+      />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.4, scale: 1 }}
+        animate={{ opacity: 0.35, scale: 1 }}
         transition={{ duration: 1 }}
-        className="absolute bottom-0 -left-32 w-96 h-96 bg-red-100 rounded-full blur-3xl"
-      ></motion.div>
+        className="absolute bottom-[-100px] left-[-120px] w-80 h-80 bg-red-100 rounded-full blur-[110px]"
+      />
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 relative z-10">
-        
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 relative z-[2]">
+
         {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-4xl font-bold text-red-600 mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">
             Why Choose Us
           </h2>
 
-          <p className="text-gray-600 mb-10 max-w-lg leading-relaxed">
-            Trusted, experienced, and focused on long-term landscape health — what sets Giovanni's Landscaping apart.
+          <p className="text-gray-600 mb-10 max-w-lg leading-relaxed text-[17px]">
+            Trusted, experienced, and focused on long-term landscape health —
+            what sets Giovanni’s Landscaping apart.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Feature Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {items.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                whileHover={{ scale: 1.00 }}
-                className="p-5 bg-white rounded-[22px] shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-gray-200 flex items-center gap-4 group hover:shadow-xl transition-all"
+                whileHover={{ scale: 1.03 }}
+                className="p-5 bg-white rounded-2xl shadow-md border border-gray-200 flex items-center gap-4 group hover:shadow-xl transition-all"
               >
-                <div className={`w-12 h-12 rounded-full ${item.bg} flex items-center justify-center ${item.textColor} group-hover:scale-110 transition`}>
+                {/* Icon */}
+                <div
+                  className={`w-12 h-12 rounded-full flex items-center justify-center ${item.bg} ${item.textColor} group-hover:scale-110 transition-all`}
+                >
                   {item.icon}
                 </div>
+
+                {/* Text */}
                 <div>
                   <h3 className="font-semibold text-lg text-gray-900">
                     {item.title}
@@ -91,23 +100,27 @@ export default function WhyChooseUs() {
           </div>
         </motion.div>
 
-        {/* RIGHT SIDE — TEXT BOX */}
+        {/* RIGHT SIDE BOX */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-red-50 p-12 rounded-[32px] shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-red-100"
+          className="bg-red-50 p-8 sm:p-10 lg:p-12 rounded-3xl shadow-lg border border-red-100"
         >
-          <h3 className="text-2xl font-bold text-red-600 mb-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-red-600 mb-6">
             Our Approach
           </h3>
 
-          <p className="text-gray-700 leading-relaxed mb-6 text-[17px]">
-            Our reputation is built on trust, exceptional quality, and meticulous attention to detail. We take pride in every project, using sustainable and organic methods whenever possible.
+          <p className="text-gray-700 leading-relaxed mb-5 text-[17px]">
+            Our reputation is built on trust, exceptional quality, and meticulous
+            attention to detail. We take pride in every project and use
+            sustainable and organic methods whenever possible.
           </p>
 
           <p className="text-gray-700 leading-relaxed text-[17px]">
-            Your landscape is a long-term investment — we’re here to help it grow, flourish, and stay healthy season after season.
+            Your landscape is a long-term investment — we help it grow,
+            flourish, and stay healthy season after season.
           </p>
         </motion.div>
       </div>

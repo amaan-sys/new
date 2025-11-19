@@ -20,7 +20,7 @@ export default function KeyServices() {
       img: maintenanceImg,
     },
     {
-      title:" Irrigation Systems Services",
+      title: "Irrigation Systems Services",
       text: "We provide installations, repairs, upgrades, and optimization for reliable system performance.",
       img: irrigationImg,
     },
@@ -52,35 +52,35 @@ export default function KeyServices() {
   ];
 
   return (
-    <section id="services" className="py-5 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="services" className="py-16 bg-white mx-auto">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-        <h2 className="text-4xl font-extrabold text-center text-red-600 mb-14 tracking-tight">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-red-600 mb-14 tracking-tight">
           Our Key Services
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
               className="
                 group 
-                relative 
                 bg-white 
-                rounded-xl 
+                rounded-2xl 
                 overflow-hidden 
                 shadow-md 
-                hover:shadow-2xl 
-                transform 
-                hover:-translate-y-2 
+                hover:shadow-xl 
                 transition-all 
-                duration-700 
+                duration-500 
                 border border-red-100
+                hover:-translate-y-2
               "
             >
 
-              {/* Service Image */}
-              <div className="h-44 w-full overflow-hidden">
+              {/* Image */}
+              <div className="relative h-48 w-full overflow-hidden">
                 <img
                   src={service.img}
                   alt={service.title}
@@ -89,27 +89,27 @@ export default function KeyServices() {
               </div>
 
               {/* Content */}
-              <div className="p-6 bg-white/90 backdrop-blur-md transition-colors duration-500 group-hover:bg-red-50 ">
-                <h3 className="text-2xl font-bold text-red-600 mb-2 group-hover:text-red-700 transition-colors">
+              <div className="p-5 sm:p-6 bg-white/90 backdrop-blur-md">
+                <h3 className="text-xl font-bold text-red-600 mb-2 group-hover:text-red-700 transition">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 group-hover:text-gray-800 transition-colors  ">
+
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed group-hover:text-gray-800 transition">
                   {service.text}
                 </p>
 
-                {/* Animated Accent Bar */}
+                {/* Accent Bar */}
                 <div
                   className="
-                  mt-4
-                
-                  h-1 
-                  w-0 
-                  bg-red-500 
-                  rounded-full 
-                  transition-all 
-                  duration-700 
-                  group-hover:w-full
-                "
+                    mt-4
+                    h-1 
+                    w-0 
+                    bg-red-500 
+                    rounded-full 
+                    transition-all 
+                    duration-700 
+                    group-hover:w-full
+                  "
                 ></div>
               </div>
 
