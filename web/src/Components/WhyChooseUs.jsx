@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
       icon: <Star size={24} />,
       bg: "bg-yellow-100",
       textColor: "text-yellow-600",
-      title: "Quality Craftsmanship",
+      title: "Excellence",
       subtitle: "We deliver precision on every project.",
     },
     {
