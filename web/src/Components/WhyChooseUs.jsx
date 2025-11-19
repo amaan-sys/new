@@ -34,9 +34,19 @@ export default function WhyChooseUs() {
   ];
 
   return (
+<<<<<<< HEAD
     <section className="mx-auto py-20 px-5 sm:px-8 lg:px-12 bg-white relative overflow-hidden">
 
       {/* Floating gradients */}
+=======
+    <section className="py-28 bg-white relative overflow-hidden">
+      {/* Soft red background accents */}
+      <div className="absolute top-0 -right-32 w-96 h-96 bg-red-100 rounded-full blur-7xl opacity-40"></div>
+      <div className="absolute bottom-0 -left-32 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-40"></div>
+    <section className="py-24 px-12 bg-white relative overflow-hidden">
+      
+      {/* Floating gradient blobs */}
+>>>>>>> 96e77d8edff2faa8631d8a74042193336f9446fc
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.35, scale: 1 }}
@@ -98,6 +108,13 @@ export default function WhyChooseUs() {
               </motion.div>
             ))}
           </div>
+
+        </div>
+        <div className="bg-red-50 p-10 rounded-4xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-[#E8F5E8]">
+          <h3 className="text-2xl font-bold text-red-600 mb-6">Our Approach</h3>
+          <p className="text-gray-700 leading-relaxed mb-10 text-[17px]">
+            Our reputation is built on trust, quality, and meticulous attention to detail. We take pride in our work, use sustainable and organic methods whenever possible, and treat every project — big or small — with the same level of care and craftsmanship.
+=======
         </motion.div>
 
         {/* RIGHT SIDE BOX */}
@@ -112,10 +129,16 @@ export default function WhyChooseUs() {
             Our Approach
           </h3>
 
+<<<<<<< HEAD
           <p className="text-gray-700 leading-relaxed mb-5 text-[17px]">
             Our reputation is built on trust, exceptional quality, and meticulous
             attention to detail. We take pride in every project and use
             sustainable and organic methods whenever possible.
+=======
+          <p className="text-gray-700 leading-relaxed mb-6 text-[17px]">
+            Our reputation is built on trust, exceptional quality, and meticulous attention to detail. We take pride in every project, using sustainable and organic methods whenever possible.
+>>>>>>> 9266cf4b3875b22fe37b31b864e8184227c4e192
+>>>>>>> 96e77d8edff2faa8631d8a74042193336f9446fc
           </p>
 
           <p className="text-gray-700 leading-relaxed text-[17px]">
