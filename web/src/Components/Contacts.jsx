@@ -3,7 +3,7 @@ import logoC from "../assets/logo-c.png";
 
 export default function Contacts() {
   return (
-    <section id="contact" className="bg-gray-100 py-16 font-serif">
+    <section id="contact" className="bg-white py-16 font-serif">
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2">
 
         {/* LEFT SECTION — FORM */}
@@ -130,7 +130,7 @@ export default function Contacts() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center rounded-2xl bg-white p-6 sm:p-10 text-center shadow-xl w-full"
+          className="flex flex-col items-center justify-center rounded-2xl rounded-3xl border border-gray-300 p-6 sm:p-10 text-center shadow-xl w-full"
         >
           <img
             src={logoC}

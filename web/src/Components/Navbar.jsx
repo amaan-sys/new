@@ -36,7 +36,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500
       ${showNav ? "translate-y-0" : "-translate-y-full"}
-      bg-white/80 backdrop-blur-xl shadow-lg border-b border-red-100`}
+      bg-white/70 backdrop-blur-xl shadow-lg border-b border-red-100`}
     >
       <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center">
 

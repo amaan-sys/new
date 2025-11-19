@@ -2,50 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import whoweare from "../assets/whoweare.webp";
 
-// Vision Icon
-const VisionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="48"
-    height="48"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="text-red-600 mb-4 mx-auto"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <circle cx="12" cy="12" r="6" />
-    <circle cx="12" cy="12" r="2" />
-  </svg>
-);
-
-// Mission Icon
-const MissionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="48"
-    height="48"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="text-red-600 mb-4 mx-auto"
-  >
-    <path d="M3 17l6-6 4 4 8-8" />
-    <path d="M14 7h7v7" />
-  </svg>
-);
 
 export default function About() {
   return (
     <section
       id="about"
-      className="py-16 md:py-20 bg-[#f9f7f4] font-[Inter] mx-auto"
+      className=" md:py-12 py-10  font-[Inter] mx-auto"
     >
       {/* ABOUT HEADING */}
       <div className="text-center mb-10 px-4">
@@ -59,9 +21,9 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-6xl mx-auto px-4 sm:px-6"
+        className="max-w-6xl mx-auto px-4 sm:px-6 "
       >
-        <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-14 shadow-xl relative overflow-hidden">
+        <div className="bg-[#f9f7f4] rounded-3xl p-6 sm:p-10 md:p-14 shadow-xl relative overflow-hidden border border-red-500">
 
           {/* Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
@@ -94,7 +56,7 @@ export default function About() {
 
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-1 bg-red-600 rounded-full h-10"></div>
-                <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                <p className="text-gray-700 text-base sm:text-lg leading-relaxed py-1.5">
                   Creating natural, welcoming, timeless environments.
                 </p>
               </div>
@@ -154,61 +116,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* VISION + MISSION */}
-        <div className="mt-20 px-2 sm:px-4">
-
-          <div className="text-center mb-10">
-            <p className="text-lg sm:text-xl font-semibold text-red-500 uppercase tracking-widest">
-              Our Guiding Principles
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-
-            {/* VISION */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
-              whileHover={{ y: -6 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 sm:p-8 md:p-10 rounded-3xl shadow-xl border border-red-100"
-            >
-              <div className="text-center">
-                <VisionIcon />
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-red-600 mb-3">
-                  Our Vision
-                </h3>
-                <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                  To be the recognized leader in sustainable, high-end landscaping —
-                  creating beautiful outdoor sanctuaries that enhance life.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* MISSION */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              whileHover={{ y: -6 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 sm:p-8 md:p-10 rounded-3xl shadow-xl border border-red-100"
-            >
-              <div className="text-center">
-                <MissionIcon />
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-red-600 mb-3">
-                  Our Mission
-                </h3>
-                <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                  To deliver dependable, expert landscaping services with precision,
-                  innovation, and a commitment to client satisfaction.
-                </p>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
       </motion.div>
     </section>
   );
