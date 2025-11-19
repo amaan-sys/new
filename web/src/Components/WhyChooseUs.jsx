@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
             Our Approach
           </h3>
 
-          <p className="text-gray-700 leading-relaxed mb-5 text-[17px]">
+          <p className="text-gray-700 leading-relaxed mb-5 text-[17px] text-sm">
             Our reputation is built on trust, exceptional quality, and meticulous
             attention to detail. We take pride in every project and use
             sustainable and organic methods whenever possible.
