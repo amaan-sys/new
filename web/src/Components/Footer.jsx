@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoC from "../assets/logo-c.png";
 import emailIcon from "../assets/email-logo.jpg";
 
@@ -35,18 +36,10 @@ export default function Footer() {
             </h3>
 
             <ul className="mt-4 space-y-2 text-base sm:text-lg">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About", href: "#about" },
-                { label: "Services", href: "#services" },
-                { label: "Contact", href: "#contact" },
-              ].map((item, i) => (
-                <li key={i}>
-                  <a href={item.href} className="hover:text-white transition">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+              <li><a href="/#home" className="hover:text-white transition">Home</a></li>
+              <li><a href="/#about" className="hover:text-white transition">About</a></li>
+              <li><a href="/#services" className="hover:text-white transition">Services</a></li>
+              <li><a href="/#contact" className="hover:text-white transition">Contact</a></li>
             </ul>
           </div>
 
@@ -58,10 +51,7 @@ export default function Footer() {
 
             <ul className="mt-4 space-y-2 text-base sm:text-lg">
               <li>
-                <a
-                  href="tel:+15105212171"
-                  className="hover:text-white transition"
-                >
+                <a href="tel:+15105212171" className="hover:text-white transition">
                   Phone: (510) 521-2171
                 </a>
               </li>
@@ -90,15 +80,9 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6">
-            {["Privacy", "Terms", "Contact"].map((label, i) => (
-              <a
-                key={i}
-                href={`#${label.toLowerCase()}`}
-                className="hover:text-white transition"
-              >
-                {label}
-              </a>
-            ))}
+            <Link to="/privacy" className="hover:text-white transition">Privacy</Link>
+            <a href="/terms" className="hover:text-white transition">Terms</a>
+            <a href="/#contact" className="hover:text-white transition">Contact</a>
           </div>
         </div>
       </div>

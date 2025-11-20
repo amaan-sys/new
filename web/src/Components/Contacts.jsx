@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import logoC from "../assets/logo-c.png";
 
+
 export default function Contacts() {
+
+
+
   return (
     <section id="contact" className="bg-white py-16 font-serif">
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2">
@@ -34,21 +38,19 @@ export default function Contacts() {
                 id="name"
                 name="name"
                 required
-                whileFocus={{ scale: 1.01 }}
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
                 placeholder="Your Name"
               />
             </motion.div>
 
             {/* EMAIL */}
-            <motion.div  className="w-full">
+            <motion.div className="w-full">
               <label className="block text-sm font-semibold text-gray-700">Email</label>
               <motion.input
                 id="email"
                 name="email"
                 type="email"
                 required
-                whileFocus={{ scale: 1.01 }}
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
                 placeholder="you@email.com"
               />
@@ -62,14 +64,13 @@ export default function Contacts() {
                 name="phone"
                 type="tel"
                 required
-                whileFocus={{ scale: 1.01 }}
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
                 placeholder="(123) 456-7890"
               />
             </motion.div>
 
             {/* SERVICE DROPDOWN */}
-            <motion.div  className="w-full">
+            <motion.div className="w-full">
               <label className="block text-sm font-semibold text-gray-700">Select Service</label>
               <motion.select
                 id="service"
@@ -97,7 +98,7 @@ export default function Contacts() {
             </motion.div>
 
             {/* MESSAGE */}
-            <motion.div  className="w-full">
+            <motion.div className="w-full">
               <label className="block text-sm font-semibold text-gray-700">
                 Message / Project Details
               </label>
@@ -106,7 +107,6 @@ export default function Contacts() {
                 name="message"
                 rows={5}
                 required
-                whileFocus={{ scale: 1.01 }}
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
                 placeholder="Share your vision, timeline, and details we should know."
               ></motion.textarea>
@@ -121,6 +121,8 @@ export default function Contacts() {
             >
               Submit Request
             </motion.button>
+
+
           </form>
         </motion.div>
 
@@ -156,11 +158,11 @@ export default function Contacts() {
               📞 Contact Information
             </p>
 
-            <motion.p whileHover={{ x: 6 }} className="text-sm sm:text-base">
+            <motion.p className="text-sm sm:text-base">
               <span className="font-semibold text-gray-900">Phone:</span> 510.521.2171
             </motion.p>
 
-            <motion.p whileHover={{ x: 6 }} className="text-sm sm:text-base">
+            <motion.p className="text-sm sm:text-base">
               <span className="font-semibold text-gray-900">Email:</span> giovannis@giovannislandscaping.net
             </motion.p>
           </div>

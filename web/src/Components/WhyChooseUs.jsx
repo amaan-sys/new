@@ -106,9 +106,9 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-white p-8 sm:p-10 lg:p-12 rounded-3xl shadow-lg border border-red-200"
+          className="bg-white p-8 sm:p-10 lg:p-12 rounded-3xl shadow-lg border border-red-200 "
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-red-600 mb-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-red-600 mb-9 my-4 ">
             Our Approach
           </h3>
 
@@ -118,10 +118,14 @@ export default function WhyChooseUs() {
             sustainable and organic methods whenever possible.
           </p>
 
-          <p className="text-gray-700 leading-relaxed text-[17px]">
+          <p className="text-gray-700 leading-relaxed text-[17px] mb-10">
             Your landscape is a long-term investment — we help it grow,
             flourish, and stay healthy season after season.
           </p>
+        
+          <div className="w-full max-w-xs md:max-w-md lg:max-w-lg h-1 bg-red-600 rounded-full mx-auto"></div>
+
+
         </motion.div>
       </div>
     </section>
