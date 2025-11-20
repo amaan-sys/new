@@ -10,7 +10,6 @@ import WhyChooseUs from './Components/WhyChooseUs'
 import VisionMission from './Components/VisionMission'
 import Privacy from './Pages/Privacy'
 import Terms from './Pages/Terms'
-import TermsComponent from './Components/TermsComponent'
 import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
