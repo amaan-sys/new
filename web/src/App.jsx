@@ -36,7 +36,7 @@ function App() {
         />
 
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
+        <Route path="/Terms" element={<Terms />} />
       </Routes>
 
       <Footer />
