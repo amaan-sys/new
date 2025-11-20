@@ -9,8 +9,8 @@ import KeyServices from './Components/KeyServices'
 import WhyChooseUs from './Components/WhyChooseUs'
 import VisionMission from './Components/VisionMission'
 import Privacy from './Pages/Privacy'
-import Terms from './Pages/Terms'
 import ScrollToTop from "./Components/ScrollToTop";
+import ConditionPage from './Pages/Condition';
 
 function App() {
 
@@ -36,7 +36,8 @@ function App() {
         />
 
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms/>} />
+        <Route path="/condition" element={<ConditionPage />} />
+      
       </Routes>
 
       <Footer />
