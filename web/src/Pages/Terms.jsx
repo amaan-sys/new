@@ -1,4 +1,4 @@
-import TermsContent from "../Components/Terms";
+import TermsContent from "../Components/TermsComponent";
 
 export default function Terms() {
   return (

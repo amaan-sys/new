@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TermsContent() {
   return (
-    <section id="terms" className="min-h-screen bg-white text-gray-800 py-20 px-6 font-serif">
+    <section id="terms" className="min-h-screen bg-white text-gray-800  font-serif py-30 px-2">
       <div className="max-w-4xl mx-auto">
 
         {/* Page Title */}
