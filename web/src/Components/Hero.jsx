@@ -65,7 +65,7 @@ export default function Hero() {
               transition-all
             "
           >
-            Get a Free Quote
+            Book Appointment
           </button>
 
           {/* Button 2 */}

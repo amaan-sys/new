@@ -173,7 +173,7 @@ export default function Contacts() {
             whileTap={{ scale: 0.95 }}
             className="mt-6 w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700 shadow-lg"
           >
-            Book an Appointment
+            Book Appointment
           </motion.button>
         </motion.div>
       </div>
