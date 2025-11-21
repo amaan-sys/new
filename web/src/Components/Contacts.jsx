@@ -132,15 +132,15 @@ export default function Contacts() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center rounded-2xl rounded-3xl border border-gray-300 p-6 sm:p-10 text-center shadow-xl w-full"
+          className="flex flex-col items-center justify-between rounded-2xl rounded-3xl border border-gray-300 p-6 sm:p-10 text-center shadow-xl w-full"
         >
           <img
             src={logoC}
             alt="Giovanni's Landscaping logo"
-            className="h-32 w-32 sm:h-48 sm:w-48 object-contain"
+            className="h-32 w-32 sm:h-75 sm:w-75 object-contain"
           />
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-4">
             Connect With Us
           </h3>
 
@@ -148,12 +148,12 @@ export default function Contacts() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-gray-600 text-sm sm:text-base px-1 sm:px-4 leading-relaxed mt-2"
+            className="text-gray-600 text-sm sm:text-base px-1 sm:px-4 leading-relaxed mt-3"
           >
             At Giovanni’s Landscaping, we’re here to help you bring your outdoor vision to life.
           </motion.p>
 
-          <div className="space-y-3 text-gray-800 mt-4">
+          <div className="space-y-3 text-gray-800 mt-6">
             <p className="font-semibold text-red-600 text-base sm:text-lg">
               📞 Contact Information
             </p>
@@ -166,6 +166,15 @@ export default function Contacts() {
               <span className="font-semibold text-gray-900">Email:</span> giovannis@giovannislandscaping.net
             </motion.p>
           </div>
+
+          {/* BOOK APPOINTMENT BUTTON */}
+          <motion.button
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-6 w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700 shadow-lg"
+          >
+            Book an Appointment
+          </motion.button>
         </motion.div>
       </div>
     </section>
