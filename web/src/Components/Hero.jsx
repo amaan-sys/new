@@ -52,21 +52,25 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
           
           {/* Button 1 */}
-          <button
-            onClick={() =>
-              document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="
-              px-7 py-3 sm:px-8 rounded-full
-              text-base sm:text-lg font-semibold
-              bg-red-500 hover:bg-red-600
-              shadow-[0_0_18px_rgba(255,0,0,0.55)]
-              hover:scale-110 active:scale-95 
-              transition-all
-            "
-          >
-            Book Appointment
-          </button>
+         <a
+  href="https://giovannislandscaping.youcanbook.me/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    className="
+      px-7 py-3 sm:px-8 rounded-full
+      text-base sm:text-lg font-semibold
+      bg-red-500 hover:bg-red-600
+      shadow-[0_0_18px_rgba(255,0,0,0.55)]
+      hover:scale-110 active:scale-95 
+      transition-all
+    "
+  >
+    Book Appointment
+  </button>
+</a>
+
 
           {/* Button 2 */}
           <button
