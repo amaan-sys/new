@@ -168,13 +168,17 @@ export default function Contacts() {
           </div>
 
           {/* BOOK APPOINTMENT BUTTON */}
-          <motion.button
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-6 w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700 shadow-lg"
-          >
-            Book Appointment
-          </motion.button>
+          <motion.a
+  href="https://giovannislandscaping.youcanbook.me/"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.01 }}
+  whileTap={{ scale: 0.95 }}
+  className="mt-6 w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700 shadow-lg text-center block"
+>
+  Book Appointment
+</motion.a>
+                
         </motion.div>
       </div>
     </section>
