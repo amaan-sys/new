@@ -85,21 +85,20 @@ export default function Navbar() {
               className="cursor-pointer font-medium text-lg relative group transition"
             >
               <span
-                className={`transition ${
-                  active === item.id
+                className={`transition ${active === item.id
                     ? "text-red-600"
                     : "text-gray-900 group-hover:text-red-500"
-                }`}
+                  }`}
               >
                 {item.label}
               </span>
 
+
               <span
-                className={`absolute left-0 -bottom-1 h-[3px] rounded-full transition-all duration-300 ${
-                  active === item.id
-                    ? "w-full bg-red-600"
-                    : "w-0 group-hover:w-full bg-red-300"
-                }`}
+                className={`absolute left-0 -bottom-1 h-[3px] rounded-full transition-all duration-300 ${active === item.id
+                  ? "w-full bg-red-600"
+                  : "w-0 group-hover:w-full bg-red-300"
+                  }`}
               />
             </li>
           ))}
