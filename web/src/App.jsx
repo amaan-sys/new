@@ -11,6 +11,7 @@ import VisionMission from './Components/VisionMission'
 import Privacy from './Pages/Privacy'
 import ScrollToTop from "./Components/ScrollToTop";
 import ConditionPage from './Pages/Condition';
+import Gallery from './Pages/Gallery';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
 
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/condition" element={<ConditionPage />} />
+        <Route path="/gallery" element={<Gallery />} />
       
       </Routes>
 

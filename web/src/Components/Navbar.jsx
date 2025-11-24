@@ -10,7 +10,7 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Hide navbar while scrolling down
+  // Hide navbar on scroll
   useEffect(() => {
     let lastScroll = window.scrollY;
     const handleScroll = () => {
@@ -25,30 +25,30 @@ export default function Navbar() {
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
+    { id: "gallery", label: "Gallery", route: "/gallery" }, // ✅ ADDED
     { id: "services", label: "Services" },
     { id: "contact", label: "Contact" },
   ];
 
-  // SCROLL OR NAVIGATE
-  const handleNavClick = (id) => {
-    setActive(id);
+  // Handle navigation or scroll
+  const handleNavClick = (item) => {
+    setActive(item.id);
     setIsOpen(false);
 
-    if (location.pathname !== "/") {
-      // First go home
-      navigate("/");
+    if (item.route) {
+      // ✅ Navigate to another page
+      navigate(item.route);
+      return;
+    }
 
-      // then scroll once home is loaded
+    // Scroll to section on home page
+    if (location.pathname !== "/") {
+      navigate("/");
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({
-          behavior: "smooth",
-        });
+        document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
       }, 300);
     } else {
-      // Already on home → scroll normally
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-      });
+      document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -60,30 +60,28 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center">
 
-        {/* LOGO - Always goes HOME */}
+        {/* Logo */}
         <div
           className="flex items-center gap-3 cursor-pointer"
-          onClick={() => handleNavClick("home")}
+          onClick={() => handleNavClick({ id: "home" })}
         >
           <img
             src={Logo}
             alt="Giovanni's Landscaping Logo"
             className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition duration-300 hover:scale-110"
           />
-          <span
-            className="text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition"
-            style={{ fontFamily: "'Times New Roman', Georgia, serif" }}
-          >
+          <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition"
+            style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
             Giovanni’s Landscaping
           </span>
         </div>
 
-        {/* DESKTOP MENU */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <li
               key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              onClick={() => handleNavClick(item)}
               className="cursor-pointer font-medium text-lg relative group transition"
             >
               <span
@@ -107,7 +105,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* MOBILE TOGGLE */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden text-red-600 text-3xl"
           onClick={() => setIsOpen(!isOpen)}
@@ -116,7 +114,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white shadow-lg transition-all duration-500
         ${isOpen ? "max-h-80 p-4" : "max-h-0 p-0 overflow-hidden"}`}
@@ -124,7 +122,7 @@ export default function Navbar() {
         {navItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => handleNavClick(item.id)}
+            onClick={() => handleNavClick(item)}
             className={`w-full text-left py-4 text-lg font-medium border-b
               ${active === item.id ? "text-red-600" : "text-gray-900"}
             `}
