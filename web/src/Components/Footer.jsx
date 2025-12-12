@@ -4,7 +4,7 @@ import emailIcon from "../assets/email-logo.jpg";
 
 export default function Footer() {
   return (
-    <footer className="bg-red-600 text-white py-12 px-6 sm:px-12">
+    <footer className="bg-red-600 text-white py-11 px-6 sm:px-12">
       <div className="mx-auto w-full max-w-7xl flex flex-col gap-12">
 
         {/* --- TOP GRID --- */}
