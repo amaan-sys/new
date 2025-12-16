@@ -1,15 +1,57 @@
 import { motion } from "framer-motion";
 import logoC from "../assets/logo-c.png";
-
+import { useState } from "react";
 
 export default function Contacts() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.message);
+
+      setStatus("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } catch (err) {
+      setStatus("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="bg-white py-16 font-serif">
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2">
-
         {/* LEFT SECTION — FORM */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -23,20 +65,24 @@ export default function Contacts() {
           </h2>
 
           <p className="mt-2 text-gray-600 text-sm sm:text-base leading-relaxed max-w-md">
-            Tell us more about your project and we&apos;ll reach out with the next steps.
+            Tell us more about your project and we&apos;ll reach out with the
+            next steps.
           </p>
 
           <form
-            action="https://formspree.io/f/xxxxxxx"
-            method="POST"
+            onSubmit={handleSubmit}
             className="mt-8 flex flex-col space-y-5 w-full"
           >
             {/* NAME */}
             <motion.div className="w-full">
-              <label className="block text-sm font-semibold text-gray-700">Name</label>
+              <label className="block text-sm font-semibold text-gray-700">
+                Name
+              </label>
               <motion.input
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 required
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
                 placeholder="Your Name"
@@ -45,10 +91,14 @@ export default function Contacts() {
 
             {/* EMAIL */}
             <motion.div className="w-full">
-              <label className="block text-sm font-semibold text-gray-700">Email</label>
+              <label className="block text-sm font-semibold text-gray-700">
+                Email
+              </label>
               <motion.input
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 type="email"
                 required
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
@@ -58,10 +108,14 @@ export default function Contacts() {
 
             {/* PHONE */}
             <motion.div className="w-full">
-              <label className="block text-sm font-semibold text-gray-700">Phone Number</label>
+              <label className="block text-sm font-semibold text-gray-700">
+                Phone Number
+              </label>
               <motion.input
                 id="phone"
                 name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 type="tel"
                 required
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
@@ -71,16 +125,22 @@ export default function Contacts() {
 
             {/* SERVICE DROPDOWN */}
             <motion.div className="w-full">
-              <label className="block text-sm font-semibold text-gray-700">Select Service</label>
+              <label className="block text-sm font-semibold text-gray-700">
+                Select Service
+              </label>
               <motion.select
                 id="service"
                 name="service"
+                value={formData.service}
+                onChange={handleChange}
                 required
                 defaultValue=""
                 whileFocus={{ scale: 1.01 }}
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
               >
-                <option value="" disabled>Choose a service</option>
+                <option value="" disabled>
+                  Choose a service
+                </option>
 
                 {[
                   "Landscape Maintenance",
@@ -105,6 +165,8 @@ export default function Contacts() {
               <motion.textarea
                 id="message"
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows={5}
                 required
                 className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-sm sm:text-base focus:border-red-500 focus:outline-none"
@@ -114,14 +176,31 @@ export default function Contacts() {
 
             {/* BUTTON */}
             <motion.button
-              type="submit"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700"
-            >
-              Submit Request
-            </motion.button>
+  type="submit"
+  disabled={loading}
+  whileHover={!loading ? { scale: 1.01 } : {}}
+  whileTap={!loading ? { scale: 0.95 } : {}}
+  className={`w-full rounded-lg py-3 text-base sm:text-lg font-semibold text-white transition
+    ${loading
+      ? "bg-gray-400 cursor-not-allowed"
+      : "bg-red-600 hover:bg-red-700"
+    }`}
+>
+  {loading ? "Sending..." : "Submit Request"}
+</motion.button>
 
+
+            {status && (
+  <p
+    className={`text-sm text-center mt-2 ${
+      status.includes("success")
+        ? "text-green-600"
+        : "text-red-600"
+    }`}
+  >
+    {status}
+  </p>
+)}
 
           </form>
         </motion.div>
@@ -150,7 +229,8 @@ export default function Contacts() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-gray-600 text-sm sm:text-base px-1 sm:px-4 leading-relaxed mt-3"
           >
-            At Giovanni’s Landscaping, we’re here to help you bring your outdoor vision to life.
+            At Giovanni’s Landscaping, we’re here to help you bring your outdoor
+            vision to life.
           </motion.p>
 
           <div className="space-y-3 text-gray-800 mt-6">
@@ -159,26 +239,27 @@ export default function Contacts() {
             </p>
 
             <motion.p className="text-sm sm:text-base">
-              <span className="font-semibold text-gray-900">Phone:</span> 510.521.2171
+              <span className="font-semibold text-gray-900">Phone:</span>{" "}
+              510.521.2171
             </motion.p>
 
             <motion.p className="text-sm sm:text-base">
-              <span className="font-semibold text-gray-900">Email:</span> giovannis@giovannislandscaping.net
+              <span className="font-semibold text-gray-900">Email:</span>{" "}
+              giovannis@giovannislandscaping.net
             </motion.p>
           </div>
 
           {/* BOOK APPOINTMENT BUTTON */}
           <motion.a
-  href="https://giovannislandscaping.youcanbook.me/"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.01 }}
-  whileTap={{ scale: 0.95 }}
-  className="mt-6 w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700 shadow-lg text-center block"
->
-  Book Appointment
-</motion.a>
-                
+            href="https://giovannislandscaping.youcanbook.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-6 w-full rounded-lg bg-red-600 py-3 text-base sm:text-lg font-semibold text-white transition hover:bg-red-700 shadow-lg text-center block"
+          >
+            Book Appointment
+          </motion.a>
         </motion.div>
       </div>
     </section>
