@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoC from "../assets/logo-c.png";
+import logoC from "../assets/newlogo2.png";
 import emailIcon from "../assets/email-logo.jpg";
 
 export default function Footer() {

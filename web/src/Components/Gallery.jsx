@@ -9,7 +9,7 @@ import img4 from "../assets/gallery/bb.jpg";
 import img5 from "../assets/gallery/c.jfif";
 import img6 from "../assets/gallery/cc.jpg";
 import img7 from "../assets/gallery/d.jfif";
-import img8 from "../assets/gallery/dd.jfif";
+// import img8 from "../assets/gallery/dd.jfif";
 import img9 from "../assets/gallery/e.jfif";
 import img10 from "../assets/gallery/ee.jfif";
 import img11 from "../assets/gallery/f.jfif";
@@ -21,7 +21,7 @@ import img16 from "../assets/gallery/h.jfif";
 import img17 from "../assets/gallery/hh.jpg";
 import img18 from "../assets/gallery/i.jpg";
 import img19 from "../assets/gallery/ii.jpg";
-import img20 from "../assets/gallery/j.jpg";
+// import img20 from "../assets/gallery/j.jpg";
 import img21 from "../assets/gallery/jj.jpg";
 import img22 from "../assets/gallery/k.jfif";
 import img23 from "../assets/gallery/l.jpg";
@@ -34,8 +34,8 @@ import img29 from "../assets/gallery/p.jfif";
 import img30 from "../assets/gallery/r.jpg";
 import img31 from "../assets/gallery/s.jfif";
 import img32 from "../assets/gallery/t.jfif";
-import img33 from "../assets/gallery/u.jpg";
-import img34 from "../assets/gallery/v.jfif";
+// import img33 from "../assets/gallery/u.jpg";
+// import img34 from "../assets/gallery/v.jfif";
 import img35 from "../assets/gallery/w.jfif";
 import img36 from "../assets/gallery/x.jpg";
 import img37 from "../assets/gallery/y.jfif";
@@ -45,10 +45,10 @@ export default function MasonryGallery() {
     const [selected, setSelected] = useState(null);
 
     const images = [
-        img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-        img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+        img1, img2, img3, img4, img5, img6, img7, img9, img10,
+        img11, img12, img13, img14, img15, img16, img17, img18, img19, 
         img21, img22, img23, img24, img25, img26, img27, img28, img29, img30,
-        img31, img32, img33, img34, img35, img36, img37, img38,
+        img31, img32, img35, img36, img37, img38,
     ];
 
     // Close modal on ESC

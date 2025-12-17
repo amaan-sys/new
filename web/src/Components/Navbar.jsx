@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Logo from "../assets/logo-c.png";
+import Logo from "../assets/newlogo2.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logoC from "../assets/logo-c.png";
+import logoC from "../assets/newlogo2.png";
 import { useState } from "react";
 
 export default function Contacts() {
